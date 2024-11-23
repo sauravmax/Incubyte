@@ -17,9 +17,11 @@ describe("add calculator", () => {
 
   it("negative numbers not allowed", () => {
     expect(add("1,2,-3, -100")).toBe("negative numbers not allowed -3, -100");
-    ;
   });
 
+  it("should handle newline", () => {
+    expect(add("1\n2,100")).toBe(103);
+  });
   
 
 });
@@ -28,6 +30,7 @@ const add = (numbers) => {
   let sum = 0;
   if (numbers == "") return 0;
   else {
+    numbers = numbers.replace('\n', ',')
     const numArray = numbers.split(",");
     const negativeArray = numArray.filter(e => e < 0);
     if(negativeArray.length > 0){
