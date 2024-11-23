@@ -15,7 +15,6 @@ describe("add calculator", () => {
 const add = (numbers) => {
   let sum = 0;
   if (numbers == "") return 0;
-  if (numbers.length == 1) return parseInt(numbers);
   else {
     const numArray = numbers.split(",");
 
