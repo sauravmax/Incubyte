@@ -33,9 +33,9 @@ const add = (numbers) => {
     if(negativeArray.length > 0){
         return `negative numbers not allowed ${negativeArray.join(',')}`
     }
-    numArray.forEach((n) => {
-      sum = sum + parseInt(n);
-    });
+    else{
+        sum = numArray.reduce((a,b) => parseInt(a)+parseInt(b), 0)
+    }
     return sum;
   }
 };
